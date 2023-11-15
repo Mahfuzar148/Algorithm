@@ -3,20 +3,20 @@
 #define endl '\n'
 using namespace std;
 const int inf = 2000000000;
-const int infLL = 900000000000000000;
+const long long infLL = 900000000000000000;
 const int mx = 1e5+123;
 
 ll dist[mx];
 vector<pair<long long,long long>>adj[mx];
 void dijkstra(long long source,long long node)
 {
-    for(int i=0;i<node;i++) dist[i] = infLL;///Initialization
+    for(int i=0;i<=node;i++) dist[i] = inf;///Initialization
     dist[source] = 0;///initializing source distance
 
     priority_queue<pair<long long, long long>, vector<pair<long long, long long>>, greater<pair<long long, long long>>> pq;
-   
+
     pq.push({0,source});///pushing source in queue
-   
+
 
     while(!pq.empty())
     {
@@ -31,7 +31,7 @@ void dijkstra(long long source,long long node)
         {
             int v =it.first;
             long long w = it.second;
-            if(curDis+w<dist[v]) // relax operation
+            if(curDis+w<dist[v])
             {
                 dist[v] = curDis+w;
                 pq.push({dist[v],v});
