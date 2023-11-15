@@ -33,7 +33,7 @@ class Solution
                {
                    int x = it[0];
                    int w = it[1];
-                   if(dist[u]!=INT_MAX and (curDis+w)<dist[x])
+                   if((curDis+w)<dist[x])
                    {
                         dist[x] = curDis + w;
                         pq.push({dist[x],x});
