@@ -4,9 +4,10 @@
 using namespace std;
 int main()
 {
-    int ar[] = {3,1,2,5,8,4};
+    int ar[] = {3,1,2,5,8,4,-11,12,45};
+    int sz = sizeof(ar)/sizeof(ar[0]);
     int value,hole,tmp;
-    for(int i=1;i<6;i++)
+    for(int i=1;i<sz;i++)
     {
         value = ar[i];
         hole = i;
@@ -19,8 +20,8 @@ int main()
         }
         ar[hole] = value;
     }
-    for(int i=0;i<6;i++) cout<<ar[i]<<" ";
-    
+    for(int i=0;i<sz;i++) cout<<ar[i]<<" ";
+
     return 0;
 }
 /**
